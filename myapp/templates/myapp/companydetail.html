@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    <a href="/myapp/addcompanydetail/">Click here to add company details.</a>
+    {% if com_detail %}
+        <ul>
+        {% for com in com_detail %}
+            <li><a href="companydetail.html/{{ com.id }}">{{ com.company_website }}</a> </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <strong>No internship details</strong>
+    {% endif %}
+{% endblock %}

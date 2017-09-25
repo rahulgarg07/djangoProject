@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    <a href="/myapp/addcertificationdetail/">Click here to add certification details.</a>
+    {% if cert_detail %}
+        <ul>
+        {% for cert in cert_detail %}
+            <li><a href="certificationdetail.html/{{ cert.id }}">{{ cert.certi_title }}</a> </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <strong>No certification details available right now.</strong>
+    {% endif %}
+{% endblock %}

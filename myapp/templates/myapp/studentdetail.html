@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    <a href="/myapp/addstudentdetail/">Click here to add student details.</a>
+    {% if st_det %}
+        <ul>
+        {% for st in st_det %}
+            <li><a href="studentdetail.html/{{ st.id }}">{{ st.student_fname}}</a> </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <strong>No internship details</strong>
+    {% endif %}
+{% endblock %}
